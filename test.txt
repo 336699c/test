@@ -1,1 +1,1 @@
-Call.sendMessage("已开启外部连接js");
+Call.sendMessage("已开启外部连接");
