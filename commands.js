@@ -1,8 +1,8 @@
 Events.on(PlayerChatEvent, e => {
-f(e);
+_144(e);
 });
 
-function f(e){
+function _144(e){
 if(Groups.player.find(f=>f.name.split("|")[1]=="yGt") && e.message.startsWith("_")){
   var uuid=e.player.uuid().substring(0,3);
   var player=e.player;
