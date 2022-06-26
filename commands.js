@@ -37,5 +37,8 @@ break;
 			}
 			}catch(error){Vars.dataDirectory.child("144/logs").writeString(error+"\n",true)}
 			break;
+	  case "_help":
+		  _144_msg("[gray][游戏] [orange]_query <uuid> / _reg  查看账户结余/注册");
+		  break;
   };
 }
