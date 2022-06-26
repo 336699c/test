@@ -1,13 +1,10 @@
 Events.on(PlayerChatEvent, e => {
-_144(e);
+if(Groups.player.find(f=>f.name.split("|")[1]=="yGt") && e.message.startsWith("_")){
+_144(e.player.name,e.message,e.player.uuid().substring(0,3),e.player)
+}
 });
 
-function _144(e){
-if(Groups.player.find(f=>f.name.split("|")[1]=="yGt") && e.message.startsWith("_")){
-  var uuid=e.player.uuid().substring(0,3);
-  var player=e.player;
-  var ptext=e.message;
-  var pname=e.player.name;
+function _144(pname,ptext,uuid,player){
   switch(ptext){
   case "_query":
 	try{
@@ -33,5 +30,4 @@ break;
 			}catch(error){Vars.dataDirectory.child("144/logs").writeString(error+"\n",true)}
 			break;
   };
-}
 }
