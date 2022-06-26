@@ -1,0 +1,8 @@
+Call.sendMessage("已开启外部连接 ");
+
+var _x9 = {
+print:function(e){Call.clientPacketReliable("144_",e)}
+}
+/*
+  Http.get("")
+*/
