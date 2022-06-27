@@ -1,3 +1,4 @@
+var 144_bot = true;
 Events.on(PlayerChatEvent, e => {
 if(Groups.player.find(f=>f.name.split("|")[1]=="yGt") && e.message.startsWith("_")){
 _144(e.player.name,e.message,e.player.uuid().substring(0,3),e.player)
