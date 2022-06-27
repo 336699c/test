@@ -38,8 +38,34 @@ break;
 			}
 			}catch(error){Vars.dataDirectory.child("144/logs").writeString(error+"\n",true)}
 			break;
+    case "_sign":
+			try{
+			_gamedata = JSON.parse(Vars.dataDirectory.child("144/gamedata").readString());
+			if(_gamedata[uuid]){
+				if(_gamedata[uuid]["sign"] == new Date().toDateString()){
+					_144_msg("玩家 "+pname+" [white]已经签到");
+				}else{
+				var _sign_rnd = Math.floor(Math.random()*50);
+				_gamedata["total"]+=_sign_rnd;
+				_gamedata[uuid]["money"]+=_sign_rnd;
+				_gamedata[uuid]["sign"]=new Date().toDateString();
+				Vars.dataDirectory.child("144/gamedata").writeString(JSON.stringify(_gamedata));
+				_144_msg("签到成功!  +" +_sign_rnd);
+				}
+			}else{
+				_144_msg("玩家 "+pname+" [white]尚未注册");
+			}
+			}catch(error){print (error)}
+			break;
 	  case "_help":
+		  var _help_max = 1;
+		switch(ptext.split(" ")[1]){
+			default:
+		case "1":
 		  _144_msg("[gray][游戏] [orange]_query <uuid> / _reg  查看账户结余/注册");
+		  _144_msg("[gray][游戏] [orange]_draw [uuid][white] 良心抽奖 ");
+		_144_msg("[gray][游戏] [orange]_sign [white] 签到");
+		}
 		  break;
   };
 }
